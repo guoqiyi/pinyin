@@ -1,0 +1,17 @@
+data/ibus-setup-bopomofo.desktop.in.in
+data/ibus-setup-pinyin.desktop.in.in
+src/PYConfig.cc
+src/PYDoublePinyinEditor.cc
+src/PYDynamicSpecialPhrase.cc
+src/PYEditor.cc
+src/PYEngine.cc
+src/PYExtEditor.cc
+src/PYFallbackEditor.cc
+src/PYFullPinyinEditor.cc
+src/PYHalfFullConverter.cc
+src/PYMain.cc
+src/PYPinyinEditor.cc
+src/PYPinyinEngine.cc
+src/PYPinyinProperties.cc
+setup/main.py
+[type: gettext/glade]setup/ibus-pinyin-preferences.ui
