@@ -54,7 +54,8 @@ static int
 lua_plugin_init(IBusEnginePluginPrivate * plugin){
   g_assert(NULL == plugin->L);
   /* initialize Lua */
-  plugin->L = lua_open();
+  /*plugin->L = lua_open();*/
+  plugin->L = luaL_newstate();
 
   /* enable libs in sandbox */
   lua_plugin_openlibs(plugin->L);
