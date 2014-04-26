@@ -344,7 +344,9 @@ static const luaL_Reg imelib[] = {
 };
 
 LUALIB_API int luaopen_ime (lua_State *L) {
-  luaL_register(L, LUA_IMELIBNAME, imelib);
+  /*luaL_register(L, LUA_IMELIBNAME, imelib);*/
+  luaL_newlibtable(L,imelib);
+  luaL_setfuncs(L, imelib, 0);
   return 1;
 }
 

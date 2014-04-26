@@ -157,7 +157,9 @@ static const luaL_Reg syslib[] = {
 
 
 LUALIB_API int luaopen_myos (lua_State *L) {
-  luaL_register(L, LUA_OSLIBNAME, syslib);
+  /*luaL_register(L, LUA_OSLIBNAME, syslib);*/
+  luaL_newlibtable(L,syslib);
+  luaL_setfuncs(L, syslib, 0);
   return 1;
 }
 
