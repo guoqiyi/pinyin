@@ -88,7 +88,7 @@ static int ime_join_string(lua_State* L){
   luaL_checktype(L, 1, LUA_TTABLE);
 
   sep = luaL_checklstring(L, 2, NULL);
-  vec_len = lua_objlen(L, 1);
+  vec_len = lua_rawlen(L, 1);
 
   if ( 0 == vec_len ){
     lua_pop(L, 2);
@@ -218,7 +218,7 @@ static int ime_register_trigger(lua_State * L){
   luaL_checktype(L, 3, LUA_TTABLE);
 
   /* TODO: register_trigger with input_trigger_strings. */
-  num = lua_objlen(L, 3);
+  num = lua_rawlen(L, 3);
   for ( i = 0; i < num; ++i) {
     lua_pushinteger(L, i + 1);
     lua_gettable(L, 3);
@@ -230,7 +230,7 @@ static int ime_register_trigger(lua_State * L){
   luaL_checktype(L, 4, LUA_TTABLE);
 
   /* TODO: register_trigger with candidate_trigger_strings. */
-  num = lua_objlen(L, 4);
+  num = lua_rawlen(L, 4);
   for ( i = 0; i < num; ++i) {
     lua_pushinteger(L, i + 1);
     lua_gettable(L, 4);

@@ -211,7 +211,7 @@ int ibus_engine_plugin_call(IBusEnginePlugin * plugin, const char * lua_function
 
   type = lua_type(L, -1);
   if ( LUA_TTABLE == type ){
-    return lua_objlen(L, -1);
+    return lua_rawlen(L, -1);
   } else if (LUA_TNUMBER == type || LUA_TBOOLEAN == type || LUA_TSTRING == type){
     return 1;
   }
@@ -287,7 +287,7 @@ GArray * ibus_engine_plugin_get_retvals(IBusEnginePlugin * plugin){
     return result;
 
   result = g_array_new(TRUE, TRUE, sizeof(lua_command_candidate_t *));
-  elem_num = lua_objlen(L, -1);
+  elem_num = lua_rawlen(L, -1);
 
   for ( i = 0; i < elem_num; ++i ){
     lua_pushinteger(L, i + 1);
